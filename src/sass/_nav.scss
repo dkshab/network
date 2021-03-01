@@ -1,0 +1,16 @@
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    background-color: firebrick;
+  }
+  &__menu {
+    background-color: goldenrod;
+
+    display: flex;
+
+    li {
+    }
+  }
+}
