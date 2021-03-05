@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
 @import "variables";
+@import "header";
 @import "nav";
 
 html {
@@ -17,8 +18,8 @@ html {
 body {
   font-family: $font-stack;
   line-height: 1.4;
-  margin: 1rem;
-  background-color: $extra-light-gray;
+  margin: 0;
+  background-color: $white;
 }
 
 header {
