@@ -38,7 +38,11 @@ const Header = () => {
           <span className="fab fa-instagram"></span>
           <span className="fab fa-youtube"></span>
         </div>
-        <div className="Header__right__login"></div>
+        <div className="Header__right__login">
+          <p>
+            <span className="fas fa-sign-in-alt"></span> Login/Register
+          </p>
+        </div>
       </div>
     </header>
   );

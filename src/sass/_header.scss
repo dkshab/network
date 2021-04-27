@@ -22,13 +22,47 @@
   }
 
   &__right {
+    display: flex;
+
     &__socials {
+      // margin: 0 1rem 0 0;
+
       .fab {
         margin: 0 0.5rem;
         font-size: 0.75rem;
 
         &:hover {
           color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+    &__login {
+      display: none;
+
+      //border-right: 1px solid $gray;
+
+      &:hover {
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .Header {
+    &__right {
+      &__socials {
+        border-right: 1px solid $gray;
+        padding: 0 1rem;
+      }
+      &__login {
+        display: block;
+        padding: 0 1rem;
+        p {
+          margin: 0;
+          padding: 0;
         }
       }
     }

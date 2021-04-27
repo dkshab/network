@@ -1,12 +1,4 @@
-// Variables
-$generic-box-shadow: 0 3px 7px 1px rgba(#000, 0.35);
-$box-shadow2: 0 0.15em 0.25em rgba(black, 0.25);
-$generic-border: 1px solid #f1f1f1;
-
-$generic-border-radius: 0.25rem;
-
-// Old ones
-
+// Colors
 $white: #ffffff;
 $black: #0e1111;
 
@@ -19,6 +11,8 @@ $mid-blue: #0935f3;
 $light-blue: #0960f2;
 $extra-light-blue: #0d89ef;
 
+$orangered: #ff4500;
+
 // width
 $default-width: 94vw;
 $mobile-width: 90vw;
@@ -28,4 +22,12 @@ $desktop-width: 25vw;
 // font stack
 $font-stack: "Titillium Web", "Rajdhani", sans-serif;
 
+// Transitions
 $transition: 280ms all 120ms ease-out;
+
+// Variables
+$generic-box-shadow: 0 3px 7px 1px rgba(#000, 0.35);
+$box-shadow2: 0 0.15em 0.25em rgba(black, 0.25);
+$generic-border: 1px solid #f1f1f1;
+
+$generic-border-radius: 0.25rem;

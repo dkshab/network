@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import * as ROUTES from "../../constants/routes";
+import * as ROUTES from "../../../../constants/routes";
 
 const NavBar = () => {
   return (
@@ -11,7 +11,7 @@ const NavBar = () => {
         <span className="fa fa-bars" aria-hidden="true"></span>
       </a>
       <h1 className="logo">
-        <Link to={ROUTES.HOME}>hamburgers</Link>
+        <Link to={ROUTES.HOME}>Network</Link>
       </h1>
       <nav id="main-menu" className="main-menu">
         <a
@@ -24,10 +24,19 @@ const NavBar = () => {
         </a>
         <ul>
           <li>
-            <Link to={ROUTES.HOME}>Products</Link>
+            <Link to={ROUTES.HOME}>Home</Link>
           </li>
           <li>
-            <Link to={ROUTES.HOME}>About</Link>
+            <Link to={ROUTES.HOME}>Directory</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.HOME}>News</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.HOME}>Packages</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.HOME}>Network</Link>
           </li>
           <li>
             <Link to={ROUTES.HOME}>Contact</Link>
