@@ -11,7 +11,10 @@ function Application() {
   const currentUser = useCurrentUserValue();
 
   return (
-    <div className="">
+    <div
+      className="Application--Controller"
+      data-testid="Application--Controller"
+    >
       <Suspense fallback={<Spinner />}>
         {currentUser ? <AuthApp /> : <NonAuthApp />}
       </Suspense>

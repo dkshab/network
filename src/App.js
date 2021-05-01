@@ -1,21 +1,18 @@
 import "./sass/styles.scss";
 
-import Footer from "./apps/NonAuthApp/static/Footer/Footer";
-import Header from "./apps/NonAuthApp/static/Header/Header";
-import Home from "./apps/NonAuthApp/static/Home/Home";
-import NavBar from "./apps/NonAuthApp/static/NavBar/NavBar";
+import HeaderNonAuth from "./apps/NonAuthApp/static/HeaderNonAuth/HeaderNonAuth";
+import HomeNonAuth from "./apps/NonAuthApp/static/HomeNonAuth/HomeNonAuth";
+import NavBarNonAuth from "./apps/NonAuthApp/static/NavBarNonAuth/NavBarNonAuth";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <NavBar />
+      <HeaderNonAuth />
+      <NavBarNonAuth />
       <main>
-        <Home />
+        <HomeNonAuth />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <footer></footer>
     </div>
   );
 }

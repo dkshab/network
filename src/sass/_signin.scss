@@ -1,0 +1,118 @@
+.SignInAndSignUp {
+  width: $mobile-width;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__Tabs {
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__row {
+      .tab {
+        display: inline-block;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        margin: 0px 2px;
+        background: $dark-blue;
+        color: $white;
+        border-radius: 3px 3px 0px 0px;
+        box-shadow: 0 0.5rem 0.8rem #00000080;
+        &.selected {
+          background: #fffffff6;
+          color: #000;
+          border-top: 3px solid $dark-blue;
+        }
+      }
+    }
+    &__panels {
+      background-color: $white;
+      box-shadow: 0 3px 7px -1px rgba(#000, 0.5);
+      min-height: 200px;
+      width: 100%;
+      border-radius: 3px;
+      overflow: hidden;
+      padding: 1.75rem 1.75rem 0 1.75rem;
+    }
+  }
+}
+
+.SignIn,
+.SignUp {
+  background-color: $white;
+  padding: 1rem;
+  legend,
+  p {
+    text-align: center;
+  }
+
+  p {
+    a {
+      color: red;
+      text-decoration: none;
+    }
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]) {
+    width: 15rem;
+    // max-width: 15rem;
+    margin: 0 auto;
+  }
+
+  .field {
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    label {
+      font-weight: 600;
+      color: $dark-blue;
+    }
+    &:first-child {
+      // margin-top: 1rem;
+    }
+  }
+
+  .field + .field {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .pw-links {
+    border-top: 2px solid $light-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .google-signin {
+    color: $mid-blue;
+    border: 1px solid $mid-blue;
+    padding: 0.5rem;
+    width: 12rem;
+    text-align: center;
+
+    margin: 0 0 0.5rem 0;
+    border-radius: $generic-border-radius;
+    span {
+      margin: 0 0.51rem 0 0;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .buttons {
+    margin: 0.5rem 0 1rem 0;
+    text-align: center;
+
+    button + button {
+      margin-left: 0.25rem;
+    }
+    .signup {
+      color: $white;
+      background-color: $light-blue;
+      &:disabled {
+        color: #000;
+      }
+    }
+  }
+}

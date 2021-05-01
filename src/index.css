@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.field {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  --columns: 16;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.field .item1,
+.field .item2 {
+  --gap-constant: 0.3%;
+  --width: 16;
+  --gap: calc(
+    (var(--columns, 16) - var(--width, 0)) * var(--gap-constant, 0.3%)
+  );
+  --initialbasis: calc(var(--width, 0) / var(--columns, 12) * 100%);
+  flex-basis: calc(var(--initialbasis) - var(--gap));
+}
+
+@media (min-width: 768px) {
+  .field {
+    --columns: 11;
+  }
+  .field .item1 {
+    --width: 3;
+  }
+
+  .field .item2 {
+    --width: 8;
+  }
 }

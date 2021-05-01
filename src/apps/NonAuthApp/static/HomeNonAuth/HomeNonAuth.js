@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { firestore } from "../../../../utilities/firebase";
 
-const Home = () => {
+const HomeNonAuth = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const snapshot = await firestore.collection("posts").get();
@@ -41,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeNonAuth;

@@ -1,7 +1,7 @@
 import React from "react";
 
-const Footer = () => {
+const FooterNonAuth = () => {
   return <div className="">I foot them all</div>;
 };
 
-export default Footer;
+export default FooterNonAuth;

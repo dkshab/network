@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../../../constants/routes";
 
-const Header = () => {
+const HeaderNonAuth = () => {
   const [date, setDate] = useState(new Date());
   const options = {
     month: "long",
@@ -40,7 +42,9 @@ const Header = () => {
         </div>
         <div className="Header__right__login">
           <p>
-            <span className="fas fa-sign-in-alt"></span> Login/Register
+            <Link to={ROUTES.SIGNIN}>
+              <span className="fas fa-sign-in-alt"></span> Login/Register
+            </Link>
           </p>
         </div>
       </div>
@@ -48,4 +52,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderNonAuth;

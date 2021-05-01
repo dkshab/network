@@ -39,13 +39,18 @@
     }
     &__login {
       display: none;
+      p {
+        a {
+          text-decoration: none;
+          color: inherit;
+          &:hover {
+            color: $white;
+            cursor: pointer;
+          }
+        }
+      }
 
       //border-right: 1px solid $gray;
-
-      &:hover {
-        color: $white;
-        cursor: pointer;
-      }
     }
   }
 }

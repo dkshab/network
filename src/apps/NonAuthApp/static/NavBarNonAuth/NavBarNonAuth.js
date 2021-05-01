@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import * as ROUTES from "../../../../constants/routes";
 
-const NavBar = () => {
+const NavBarNonAuth = () => {
   return (
     <div className="NavBar">
       <a href="#main-menu" className="menu-toggle" aria-label="Open main menu">
@@ -23,6 +23,9 @@ const NavBar = () => {
           <span className="fa fa-close" aria-hidden="true"></span>
         </a>
         <ul>
+          <li>
+            <Link to={ROUTES.TESTING}>Testing</Link>
+          </li>
           <li>
             <Link to={ROUTES.HOME}>Home</Link>
           </li>
@@ -55,4 +58,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarNonAuth;
