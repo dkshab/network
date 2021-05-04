@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import { useCurrentUserValue } from "../../../../context";
-import * as ROUTES from "../../../../constants/routes";
+import { signOut } from "../../../../utilities/firebase";
 
-const HeaderNonAuth = () => {
+const HeaderAuth = () => {
   const currentUser = useCurrentUserValue();
   console.log(currentUser);
 
@@ -45,17 +44,9 @@ const HeaderNonAuth = () => {
           <span className="fab fa-instagram"></span>
           <span className="fab fa-youtube"></span>
         </div>
-        {currentUser ? (
-          <div className="Header_right_signout">
-            <span>Sign Out</span>
-          </div>
-        ) : (
-          <div className="Header__right__login">
-            <p>
-              <Link to={ROUTES.SIGNIN}>
-                <span className="fas fa-sign-in-alt"></span> Login/Register
-              </Link>
-            </p>
+        {currentUser && (
+          <div className="Header__right__signout">
+            <p onClick={signOut}>Sign Out</p>
           </div>
         )}
       </div>
@@ -63,4 +54,4 @@ const HeaderNonAuth = () => {
   );
 };
 
-export default HeaderNonAuth;
+export default HeaderAuth;

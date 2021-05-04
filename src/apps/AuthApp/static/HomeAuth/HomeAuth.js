@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeNonAuth = () => {
+const HomeAuth = () => {
   return (
     <div className="Home">
       <div className="Home__hero">
@@ -29,4 +29,4 @@ const HomeNonAuth = () => {
   );
 };
 
-export default HomeNonAuth;
+export default HomeAuth;

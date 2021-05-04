@@ -15,6 +15,35 @@ const ALGOLIA_INDEX_COMPANIES = "companies";
 
 const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
 
+// SignUp Triggers
+async function createUserDocument(user) {
+  const { uid, email, displayName, photoURL, emailVerified } = user;
+  const createdAt = new Date();
+  const roles = ["user"];
+
+  firestore
+    .collection("users")
+    .doc(uid)
+    .set({
+      displayName,
+      email,
+      photoURL,
+      createdAt,
+      emailVerified,
+      userConfirmation: null,
+      roles: roles,
+    })
+    .then((response) => {
+      console.log(response);
+      return response;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+exports.createUserDocument = functions.auth.user().onCreate(createUserDocument);
+
 exports.onCompanyCreated = functions.firestore
   .document("companies/{companyId}")
   .onCreate((snapshot, context) => {

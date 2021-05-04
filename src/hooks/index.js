@@ -9,6 +9,7 @@ export const useCurrentUser = () => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot((snapshot) => {
+          console.log("User", snapshot.data());
           setCurrentUser({
             currentUser: { uid: snapshot.id, ...snapshot.data() },
           });

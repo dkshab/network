@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../../../utilities/firebase";
+import validateSignIn from "../../../../utilities/signInValidationRules";
 
 import * as ROUTES from "../../../../constants/routes";
 
@@ -12,29 +13,35 @@ const SignIn = () => {
 
   const [state, setState] = useState(initialState);
 
+  const { formErrors } = state;
+
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const { email, password } = state;
 
-    if (email && password) {
-      try {
-        await auth.createUserWithEmailAndPassword(email, password);
-        clear();
-        history.push(ROUTES.HOME);
-      } catch (error) {
-        console.error(error);
-        setState({ error: error });
-      }
-    } else {
-      console.log("lets be serious");
-    }
+    const errors = validateSignIn(state);
 
-    clear();
+    setState({ ...state, formErrors: errors });
+
+    if (Object.keys(errors).length === 0) {
+      await auth
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          //console.log(response);
+          clear();
+        })
+        .then(() => {
+          history.push(ROUTES.HOME);
+        })
+        .catch((error) => {
+          console.error(error);
+          setState({ ...state, error: error });
+        });
+    }
   };
 
   const clear = () => {
@@ -49,7 +56,7 @@ const SignIn = () => {
             Email
           </label>
           <input
-            className="item"
+            className={`item2 ${formErrors.email && "is-danger"}`}
             type="email"
             id="email-signin"
             name="email"
@@ -57,13 +64,14 @@ const SignIn = () => {
             value={state.email}
             onChange={handleChange}
           />
+          {formErrors.email && <p className="help">{formErrors.email}</p>}
         </div>
         <div className="field">
           <label className="item1" htmlFor="password">
             Password
           </label>
           <input
-            className=""
+            className={`item2 ${formErrors.password && "is-danger"}`}
             type="password"
             id="password-signin"
             name="password"
@@ -71,6 +79,7 @@ const SignIn = () => {
             value={state.password}
             onChange={handleChange}
           />
+          {formErrors.password && <p className="help">{formErrors.password}</p>}
         </div>
         <div className="pw-links">
           <p>
