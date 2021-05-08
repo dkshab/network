@@ -23,20 +23,20 @@ const searchClient = algoliasearch(
 );
 //const index = searchClient.initIndex("companies");
 
-//const URL = "https://ip.nf/me.json";
+const URL = "https://ip.nf/me.json";
 
 const Search = () => {
   const { query } = useParams();
 
-  // const [info, setInfo] = useState({ ip: "" });
+  const [info, setInfo] = useState({ ip: "" });
 
-  // useEffect(() => {
-  //   fetch(URL, { method: "get" })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setInfo({ ...data });
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch(URL, { method: "get" })
+      .then((response) => response.json())
+      .then((data) => {
+        setInfo({ ...data });
+      });
+  }, []);
 
   return (
     <div className="">
