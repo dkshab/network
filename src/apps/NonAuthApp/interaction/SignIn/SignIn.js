@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { auth } from "../../../../utilities/firebase";
+import { auth, signInWithGoogle } from "../../../../utilities/firebase";
 import validateSignIn from "../../../../utilities/signInValidationRules";
 
 import * as ROUTES from "../../../../constants/routes";
@@ -86,7 +86,7 @@ const SignIn = () => {
             <Link to={ROUTES.PASSWORD_FORGET}>Forgot password?</Link>
           </p>
 
-          <p className="google-signin">
+          <p className="google-signin" onClick={signInWithGoogle}>
             <span className="fab fa-google"></span>
             Sign In With Google
           </p>

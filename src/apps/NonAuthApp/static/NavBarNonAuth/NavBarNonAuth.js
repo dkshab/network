@@ -30,10 +30,10 @@ const NavBarNonAuth = () => {
             <Link to={ROUTES.HOME}>Home</Link>
           </li>
           <li>
-            <Link to={ROUTES.HOME}>Directory</Link>
+            <Link to={ROUTES.SEARCH}>Search</Link>
           </li>
           <li>
-            <Link to={ROUTES.HOME}>News</Link>
+            <Link to={ROUTES.NEWS}>News</Link>
           </li>
           <li>
             <Link to={ROUTES.HOME}>Packages</Link>

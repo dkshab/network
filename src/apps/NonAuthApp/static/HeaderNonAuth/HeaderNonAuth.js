@@ -6,7 +6,7 @@ import * as ROUTES from "../../../../constants/routes";
 
 const HeaderNonAuth = () => {
   const currentUser = useCurrentUserValue();
-  console.log(currentUser);
+  //console.log(currentUser);
 
   const [date, setDate] = useState(new Date());
   const options = {

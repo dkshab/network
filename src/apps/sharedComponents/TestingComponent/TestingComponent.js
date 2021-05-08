@@ -27,6 +27,10 @@ const TestingComponent = () => {
         name,
         lat,
         lng,
+        _geoloc: {
+          lat: lat,
+          lng: lng,
+        },
         createdAt: new Date(),
       };
 
